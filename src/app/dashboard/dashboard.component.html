@@ -1,0 +1,7 @@
+<div class="col-md-4" *ngFor="let data of searchVideos">
+    <iframe [src]="getEmbedURL(data)" width="350" height="150" frameborder="0" allowfullscreen>
+        <span *ngFor="let title of url">
+            {{title}}
+        </span>
+    </iframe>
+</div>
