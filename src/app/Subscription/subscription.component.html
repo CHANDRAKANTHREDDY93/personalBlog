@@ -1,0 +1,14 @@
+<div class="col-md-12" *ngFor="let title of subscribeChannelTitles">
+     <h5>{{title}}</h5>
+</div>
+<!--div class="col-md-12" *ngFor="let logo of subscribechannelLogo">
+    <img src="{{logo}}" width="300px">
+</div-->
+<div class="col-md-12">
+    <div class="col-md-3" *ngFor="let item of getVideos | paginate: { itemsPerPage: 8, currentPage: p}">
+        <iframe [src]="getEmbedURL(item)" width="210" height="120" frameborder="0" allowfullscreen>
+          </iframe>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>

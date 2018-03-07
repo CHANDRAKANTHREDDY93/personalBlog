@@ -9,7 +9,7 @@
                               </span>
                         </div>
                 </div>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
                 <li>
                     <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="material-icons">dashboard</i>
@@ -27,15 +27,87 @@
                         <li><a href="#">You're now friend with Chandrakanth</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                       <i class="material-icons">person</i>
-                       <p class="hidden-lg hidden-md">Profile</p>
-                    </a>
-                </li>
+                
+                        <li class="dropdown pull-left">
+                                <a href="#" class="dropdown-toggle pull-left" data-toggle="dropdown">
+                                        <i class="material-icons">person</i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#myModal1">New User? Sign Up</a></li>
+                                </ul>
+                            </li>
+                            <li><img src="{{img}}"></li>
+                          
             </ul>
         </div>
     </div>
 </nav>
 <br><br><br><br>
 <app-dashboard [searchVideos]="newVideo"></app-dashboard>
+<div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                    <form class="form-horizontal" action="/action_page.php">
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="email">Email:</label>
+                          <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="user.email" name="email">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="pwd">Password:</label>
+                          <div class="col-sm-10"> 
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" [(ngModel)]="user.password" name="password">
+                          </div>
+                        </div>
+                        <div class="form-group"> 
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default" (click)="validate(user)">Submit</button>
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                          </div>
+                        </div>
+                      </form>
+                      
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="myModal1" role="dialog">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+                    <form class="form-horizontal" action="/action_page.php">
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="email">Email:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" [(ngModel)]="storeData.email" name="email">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label col-sm-2" for="pwd">Password:</label>
+                          <div class="col-sm-10"> 
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" [(ngModel)]="storeData.password" name="password">
+                          </div>
+                        </div>
+                        <div class="form-group"> 
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default" (click)="saveData(storeData)">Save Data</button>
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                          </div>
+                        </div>
+                      </form>
+                      
+            </div>
+          </div>
+        </div>
+      </div>

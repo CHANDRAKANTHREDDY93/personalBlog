@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import * as _ from 'underscore';
 import { NgModule } from '@angular/core';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import{ NgxPaginationModule } from 'ngx-pagination';
 
 import { HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -18,6 +21,9 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { WatchLaterComponent } from './watch-later/watch-later.component';
 import { youTubeApiService } from './watch-later/youtube.service';
 import { TrendingComponent } from './trending/trending.component';
+import { HomeComponent } from './home/home.component';
+import { HistoryComponent } from './history/history.component';
+import { MusicComponent } from './music/music.component';
 
 @NgModule({
   imports: [
@@ -27,7 +33,8 @@ import { TrendingComponent } from './trending/trending.component';
     HttpClientModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   declarations: [
     AppComponent,
@@ -40,8 +47,11 @@ import { TrendingComponent } from './trending/trending.component';
     UpgradeComponent,
     WatchLaterComponent,
     TrendingComponent,
+    HomeComponent,
+    HistoryComponent,
+    MusicComponent
   ],
-  providers: [youTubeApiService],
+  providers: [youTubeApiService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

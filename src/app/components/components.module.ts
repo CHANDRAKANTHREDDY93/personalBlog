@@ -6,6 +6,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { HomeComponent } from '../home/home.component';
+import { HistoryComponent } from '../history/history.component';
+import { MusicComponent } from '../music/music.component';
 @NgModule({
   imports: [
     CommonModule,

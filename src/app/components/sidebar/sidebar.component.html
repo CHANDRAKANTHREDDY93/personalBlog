@@ -1,6 +1,6 @@
 <div class="logo">
     <a class="simple-text">
-        Chandrakanth Verlapally
+        {{title}}
     </a>
 </div>
 <div class="sidebar-wrapper">
@@ -40,11 +40,33 @@
         </li>
     </ul>
 
-    <div class="nav-container">
+    <div class="nav-container" *ngIf="!menuItems">
         <ul class="nav">
-            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItems">
                 <a  [routerLink]="[menuItem.path]">
                     <span class="{{menuItem.icon}}">&nbsp;{{menuItem.title}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let user of youTubeUser">
+                <a  [routerLink]="[user.path]">
+                    <span class="{{user.icon}}">&nbsp;{{user.title}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="nav-container">
+        <ul class="nav">
+            <h5>Library</h5>
+            <li *ngFor="let menu of menuItems">
+                <a  [routerLink]="[menu.path]">
+                    <span class="{{menu.icon}}">&nbsp;{{menu.title}}
                     </span>
                 </a>
             </li>

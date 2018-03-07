@@ -13,9 +13,17 @@ import { WatchLaterComponent } from './watch-later/watch-later.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { HomeComponent } from './home/home.component';
+import { HistoryComponent } from './history/history.component';
+import { MusicComponent } from './music/music.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
+    { path: 'home',           component: HomeComponent },
+    { path: 'history',        component: HistoryComponent },
+    { path : 'best of youtube', component: MusicComponent},
+    //{ path: 'best of youtube',          component: MusicComponent },
+    { path: 'notifications',  component: NotificationsComponent },
     { path: 'trending',       component: TrendingComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'history-list',   component: HistoryListComponent },
@@ -25,7 +33,7 @@ const routes: Routes =[
     { path: 'watchlater',     component: WatchLaterComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: '**',               redirectTo: 'dashboard' }
+    { path: '**',               redirectTo: 'home' }
 ];
 
 @NgModule({

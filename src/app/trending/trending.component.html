@@ -1,14 +1,12 @@
-<nav class="navbar">
-  <a class="navbar-brand" href="#">
-    <span class="glyphicon glyphicon-tint">&nbsp;Trending Now</span>
-  </a>
-</nav>
-<div class="col-md-4" *ngFor="let data of getLatestTrendingData">
-  <iframe [src]="getEmbedURL(data)" width="350" height="150" frameborder="0" allowfullscreen>
-      <span *ngFor="let title of url">
-          {{title}}
-      </span>
-  </iframe>
+<div class="col-md-12">
+  <div class="col-md-3" *ngFor="let data of getLatestTrendingData | paginate: { itemsPerPage: 4, currentPage: p}">
+  <iframe [src]="getEmbedURL(data)" width="200" height="110" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="row col-md-8">
+      <div class="col-md-4"></div>
+      <div class="col-md-8">{{title}}</div>
+  </div>
   <!--<ngb-pagination [collectionSize]="30" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
   -->
 </div>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { youTubeApiService } from '../../watch-later/youtube.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,17 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   menuItems : any =[
-    { path: 'dashboard', title: 'Dashboard',  icon: 'glyphicon glyphicon-home', class: '' },
-    { path: 'trending', title: 'Trending',  icon: 'glyphicon glyphicon-tint', class: '' },
-    { path: 'user-profile', title: 'User Profile',  icon:'glyphicon glyphicon-user', class: '' },
-    { path: 'history-list', title: 'History',  icon:'glyphicon glyphicon-repeat', class: '' },
-    { path: 'subscription', title: 'Subscriptions',  icon:'glyphicon glyphicon-hdd', class: '' },
-    { path: 'watchlater', title: 'Watch Later',  icon:'glyphicon glyphicon-time', class: '' },
-    { path: 'liked', title: 'Liked Videos',  icon:'glyphicon glyphicon-thumbs-up', class: '' },
-    { path: 'maps', title: 'Maps',  icon:'glyphicon glyphicon-map-marker', class: '' },
-    { path: 'notifications', title: 'Notifications',  icon:'glyphicon glyphicon-bell', class: '' }
+    { path: 'subscription', title: 'Subscriptions',  icon:'glyphicon glyphicon-hdd' },
+    { path: 'watchlater', title: 'Watch Later',  icon:'glyphicon glyphicon-time'},
+    { path: 'liked', title: 'Liked Videos',  icon:'glyphicon glyphicon-thumbs-up' },
+    { path: 'favorites', title: 'Favorites',  icon:'glyphicon glyphicon-bell'}
 ];
-  constructor() { }
+  youTubeUser : any=[
+    { path: 'home', title: 'Home',  subLi: [], icon: 'glyphicon glyphicon-home'},
+    { path: 'trending', title: 'Trending', subLi: [], icon: 'glyphicon glyphicon-tint'},
+    { path: 'history', title: 'History', subLi: [], icon:'glyphicon glyphicon-repeat'}
+  ];
+
+  title : string;
+  newTitle: any=[];;
+  favData : any=[]
+  constructor(private titleService : youTubeApiService){
+      this.titleService.getLatestNews().subscribe(data =>{
+          this.newTitle = data;
+          console.log(this.newTitle);
+          this.newTitle.items.map(element =>{
+            this.title = element.snippet.title;
+          })
+      })
+      this.titleService.getFavoritesList().subscribe(list=>{
+         this.favData =list;
+      })
+   }
   ngOnInit() {
+    this.title = sessionStorage.getItem("username");
   }
 }
