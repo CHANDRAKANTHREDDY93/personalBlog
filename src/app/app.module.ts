@@ -3,7 +3,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import * as _ from 'underscore';
 import { NgModule } from '@angular/core';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
-import{ NgxPaginationModule, PaginatePipe, PaginationService } from 'ngx-pagination';
+import{ NgxPaginationModule } from 'ngx-pagination';
 
 import { HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -34,8 +34,7 @@ import { MusicComponent } from './music/music.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    NgxPaginationModule, 
-    PaginatePipe
+    NgxPaginationModule
   ],
   declarations: [
     AppComponent,
@@ -52,7 +51,7 @@ import { MusicComponent } from './music/music.component';
     HistoryComponent,
     MusicComponent
   ],
-  providers: [youTubeApiService, CookieService, PaginationService],
+  providers: [youTubeApiService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
