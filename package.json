@@ -16,6 +16,8 @@
     "@angular/animations": "5.2.0",
     "@angular/common": "5.2.0",
     "@angular/compiler": "^5.2.0",
+    "@angular/cli": "1.7.0",
+    "@angular/compiler-cli": "5.2.0",
     "@angular/core": "5.2.0",
     "@angular/forms": "5.2.0",
     "@angular/http": "5.2.0",
@@ -39,13 +41,12 @@
     "ngx-pagination": "^3.1.0",
     "perfect-scrollbar": "1.1.0",
     "rxjs": "^5.4.2",
+    "typescript": "^2.8.0-dev.20180224",
     "underscore": "^1.8.3",
     "web-animations-js": "^2.3.1",
     "zone.js": "0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.7.0",
-    "@angular/compiler-cli": "5.2.0",
     "@types/bootstrap": "3.3.32",
     "@types/chartist": "0.9.34",
     "@types/jasmine": "2.5.38",
@@ -62,8 +63,7 @@
     "karma-jasmine-html-reporter": "0.2.2",
     "protractor": "5.1.0",
     "ts-node": "2.0.0",
-    "tslint": "4.5.0",
-    "typescript": "^2.8.0-dev.20180224"
+    "tslint": "4.5.0"
   },
   "engines": {
     "node": "8.9.3",
