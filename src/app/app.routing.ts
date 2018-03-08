@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TrendingComponent } from './trending/trending.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HistoryListComponent } from './history/history-list.component';
-import { SubscriptionComponent } from './subscription/subscription.component';
+import { SubscriptionComponent } from './Subscription/subscription.component';
 import { LikedComponent } from './liked/liked.component';
 import { WatchLaterComponent } from './watch-later/watch-later.component';
 import { MapsComponent } from './maps/maps.component';

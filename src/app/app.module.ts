@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HistoryListComponent } from './history/history-list.component';
-import { SubscriptionComponent } from './subscription/subscription.component';
+import { SubscriptionComponent } from './Subscription/subscription.component';
 import { LikedComponent } from './liked/liked.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
