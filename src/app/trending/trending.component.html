@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <div class="col-md-3" *ngFor="let data of getLatestTrendingData | paginate: { itemsPerPage: 4, currentPage: p}">
+  <div class="col-md-3" *ngFor="let data of getLatestTrendingData | paginate: { itemsPerPage: 4, currentPage}">
   <iframe [src]="getEmbedURL(data)" width="200" height="110" frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="row col-md-8">
@@ -9,4 +9,4 @@
   <!--<ngb-pagination [collectionSize]="30" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
   -->
 </div>
-<pagination-controls (pageChange)="p=$event"></pagination-controls>
+<pagination-controls (pageChange)="currentPage=$event"></pagination-controls>

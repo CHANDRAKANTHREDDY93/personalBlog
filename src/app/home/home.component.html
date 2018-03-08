@@ -2,10 +2,10 @@
     <li class="breadcrumb-item active">Music</li>
   </ol>
 <div class="col-md-12">
-  <div class="col-md-3" *ngFor="let item of getLatestMusicData | paginate: { itemsPerPage: 4, currentPage: p}">
+  <div class="col-md-3" *ngFor="let item of getLatestMusicData | paginate: { itemsPerPage: 4, currentPage}">
       <iframe [src]="getEmbedURL(item)" width="210" height="120" frameborder="0" allowfullscreen>
         </iframe>
   </div>
   <div class="col-md-2"></div>
 </div>
-<pagination-controls (pageChange)="p=$event"></pagination-controls>
+<pagination-controls (pageChange)="currentPage=$event"></pagination-controls>

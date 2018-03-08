@@ -14,6 +14,7 @@ export class TrendingComponent implements OnInit {
   getLatestTrendingData : any =[];
   getVideoTitle: any = [];
   newData : any = [];
+  title: string="Trending Component";
   trendingVideoContentData : any =[];
   getVideoId: any = [];
   constructor(private trendingAppService : youTubeApiService, private sanitizer: DomSanitizer) {
