@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
     channelPlayList : any = [];
     channelList : any =[];
     newsData: any =[];
+    p: any;
     constructor(private latestDataApi: youTubeApiService, private newsApi : youTubeApiService, private sanitizer: DomSanitizer){
       this.latestDataApi.getDefaultData().subscribe(data =>{
         this.getData = data;

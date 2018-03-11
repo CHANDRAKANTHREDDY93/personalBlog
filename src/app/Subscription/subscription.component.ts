@@ -10,6 +10,7 @@ import { youTubeApiService }  from '../watch-later/youtube.service';
 })
 export class SubscriptionComponent{
   subscribeList: any=[];
+  p:any;
   subscribeChannels : any =[];
   subscribeChannelTitles: any = [];
   subscribechannelLogo:any=[];
