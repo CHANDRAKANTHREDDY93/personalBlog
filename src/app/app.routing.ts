@@ -16,6 +16,10 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
 import { MusicComponent } from './music/music.component';
+import { SearchComponent } from './components/search/search.component';
+import { TimeOfIndiaComponent} from './time-of-india/time-of-india.component';
+import { EspnComponent} from './espn/espn.component';
+import { NewyorkTimesComponent } from './newyork-times/newyork-times.component';
 
 const routes: Routes =[
     { path: 'dashboard',      component: DashboardComponent },
@@ -30,9 +34,13 @@ const routes: Routes =[
     { path: 'subscription',   component: SubscriptionComponent },
     { path: 'liked',          component: LikedComponent },
     { path: 'maps',           component: MapsComponent },
-    { path: 'watchlater',     component: WatchLaterComponent },
+    { path: 'cnn',     component: WatchLaterComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    {path: 'search',          component: SearchComponent},
+    {path: 'timesOfIndia',    component: TimeOfIndiaComponent},
+    {path: 'espnCric',        component: EspnComponent},
+    {path: 'newyorkTimes',    component: NewyorkTimesComponent},
     { path: '**',               redirectTo: 'home' }
 ];
 

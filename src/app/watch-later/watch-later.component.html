@@ -1,3 +1,7 @@
 <div class="col-md-12">
+    <div class="col-md-4" *ngFor="let news of setNewsData">
+      <img src="{{news.image}}" height= "180px"> 
+        <p>{{news.title}}</p>
     </div>
+</div>
 

@@ -63,10 +63,21 @@
     <hr>
     <div class="nav-container">
         <ul class="nav">
-            <h5>Library</h5>
+            <h5>Latest News</h5>
             <li *ngFor="let menu of menuItems">
                 <a  [routerLink]="[menu.path]">
-                    <span class="{{menu.icon}}">&nbsp;{{menu.title}}
+                    <img src="{{menu.img}}" height="30px;" width="30px;">&nbsp;
+                {{menu.title}}</a>
+                
+            </li>
+        </ul>
+    </div>
+    <div class="nav-container">
+        <ul class="nav">
+            <h5>Sports News</h5>
+            <li *ngFor="let sport of sports">
+                <a  [routerLink]="[sport.path]">
+                    <span class="{{sport.icon}}">&nbsp;{{sport.title}}
                     </span>
                 </a>
             </li>

@@ -1,12 +1,8 @@
 <div class="col-md-12">
-  <div class="col-md-3" *ngFor="let data of getLatestTrendingData | paginate: { itemsPerPage: 4, currentPage}">
-  <iframe [src]="getEmbedURL(data)" width="200" height="110" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="row col-md-8">
-      <div class="col-md-4"></div>
-      <div class="col-md-8">{{title}}</div>
+  <div class="col-md-4" *ngFor="let data of getLatestTrendingData | paginate: { itemsPerPage: 3, currentPage : p}">
+  <iframe [src]="getEmbedURL(data)" width="260" height="150" frameborder="0" allowfullscreen></iframe>
   </div>
   <!--<ngb-pagination [collectionSize]="30" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
   -->
 </div>
-<pagination-controls (pageChange)="currentPage=$event"></pagination-controls>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>

@@ -21,6 +21,7 @@ export class TrendingComponent implements OnInit {
     this.trendingAppService.getTrendingVideos().subscribe(items=>
     {
       this.trendingNowData = items;
+      console.log(this.trendingNowData);
       this.trendingNowData.items.map(element =>
       {
         const url ='https://www.youtube.com/embed/';
@@ -31,11 +32,8 @@ export class TrendingComponent implements OnInit {
             this.trendingVideoContentData.items.map(e =>
             {
               this.getVideoTitle.push(e.snippet.title);
-              console.log("Description" +e.snippet.description);
             })
-
           })
-        console.log(this.getVideoId);
         this.getLatestTrendingData.push(url+element.id);
       })
     })
@@ -46,5 +44,4 @@ export class TrendingComponent implements OnInit {
   getEmbedURL(data){
     return this.sanitizer.bypassSecurityTrustResourceUrl(data);
 }
-
 }

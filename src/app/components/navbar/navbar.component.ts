@@ -1,10 +1,10 @@
 import { Component, OnInit, ElementRef, Compiler, OnChanges  } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
-
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { youTubeApiService } from '../../watch-later/youtube.service';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { SearchComponent } from '../search/search.component';
 @Component({
     
   selector: 'app-navbar',
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
     img: string;
 
     searchItem : string ="Web Development";
-    constructor(private compiler: Compiler, private element: ElementRef, private appService : youTubeApiService, private cookieService : CookieService) {
+    constructor(private compiler: Compiler, private element: ElementRef, private appService : youTubeApiService, private cookieService : CookieService, private sanitizer: DomSanitizer) {
         this.compiler.clearCache();
         this.appService.getLatestNews().subscribe(list =>{
             this.userInfo = list;
@@ -61,24 +61,27 @@ export class NavbarComponent implements OnInit {
                 }
         }
         searchResults(searchItem:string)
-        {
-            console.log(this.searchData);
-             this.newVideo = [];
-            this.videoTitle=[];
-            var res = this.appService.getSearchResults(searchItem).subscribe(data =>
-            {
-                this.searchData = data;
-                console.log(this.searchData)
-                this.videoTitle = this.searchData.items.map(obj=>obj.id.videoId)
-                const url ='https://www.youtube.com/embed/';
-                for (let index = 0; index < this.videoTitle.length; index++) {
-                this.newVideo.push(url+this.videoTitle[index]);   
-            }
-            });
-        }
-        onSearchChange(search) {  
+      {
+          console.log(this.searchData);
+           this.newVideo = [];
+          this.videoTitle=[];
+          var res = this.appService.getSearchResults(searchItem).subscribe(data =>
+          {
+              this.searchData = data;
+              console.log(this.searchData)
+              this.videoTitle = this.searchData.items.map(obj=>obj.id.videoId)
+              const url ='https://www.youtube.com/embed/';
+              for (let index = 0; index < this.videoTitle.length; index++) {
+              this.newVideo.push(url+this.videoTitle[index]);   
+          }
+          });
+      }
+      onSearchChange(search) {  
         this.newVideo = [];
         }
+        getEmbedURL(data){
+          return this.sanitizer.bypassSecurityTrustResourceUrl(data);
+      }
     ngOnInit(){
     }
     getTitle(){

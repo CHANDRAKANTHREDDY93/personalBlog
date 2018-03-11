@@ -2,12 +2,12 @@
     <div class="container-fluid">
          <div class="collapse navbar-collapse">
                 <div class="col-md-6">
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="Search" [(ngModel)]="search" #search1="ngModel" name="search1" (change)="onSearchChange(search)"/>
-                          <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button" (click)="searchResults(search)">Go!</button>
-                              </span>
-                        </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for Videos here" [(ngModel)]="search" #search1="ngModel" name="search1" (change)="onSearchChange(search)"/>
+                        <span class="input-group-btn">
+                              <button routerLink="search" class="btn btn-secondary" type="button" (click)="searchResults(search)">Go!</button>
+                            </span>
+                      </div>
                 </div>
             <ul class="nav navbar-nav">
                 <li>
@@ -19,7 +19,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="material-icons">notifications</i>
-                        <span class="notification">2</span>
+                        <span class="notification">5</span>
                         <p class="hidden-lg hidden-md">Notifications</p>
                     </a>
                     <ul class="dropdown-menu">
@@ -44,7 +44,7 @@
     </div>
 </nav>
 <br><br><br><br>
-<app-dashboard [searchVideos]="newVideo"></app-dashboard>
+<app-search [searchVideos]="newVideo"></app-search>
 <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-md">
           <div class="modal-content">
@@ -73,7 +73,6 @@
                           </div>
                         </div>
                       </form>
-                      
             </div>
           </div>
         </div>

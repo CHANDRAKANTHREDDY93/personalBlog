@@ -8,15 +8,20 @@ import { youTubeApiService } from '../../watch-later/youtube.service';
 })
 export class SidebarComponent implements OnInit {
   menuItems : any =[
-    { path: 'subscription', title: 'Subscriptions',  icon:'glyphicon glyphicon-hdd' },
-    { path: 'watchlater', title: 'Watch Later',  icon:'glyphicon glyphicon-time'},
-    { path: 'liked', title: 'Liked Videos',  icon:'glyphicon glyphicon-thumbs-up' },
-    { path: 'favorites', title: 'Favorites',  icon:'glyphicon glyphicon-bell'}
+    { path: 'cnn', title: 'CNN',  img:'../../../assets/img/cnn.png'},
+    { path: 'timesOfIndia', title: 'Times of India',  img:'../../../assets/img/toi.jpg' },
+    { path: 'newyorkTimes', title: 'The NewYork Times',  img:'../../../assets/img/nytime.jpg'}
+];
+sports : any =[
+  { path: 'espnCric', title: 'ESPN CRIC',  icon:'glyphicon glyphicon-time'},
+  { path: 'liked', title: 'Fox Sports',  icon:'glyphicon glyphicon-thumbs-up' },
+  { path: 'favorites', title: 'Ten Sports',  icon:'glyphicon glyphicon-bell'}
 ];
   youTubeUser : any=[
     { path: 'home', title: 'Home',  subLi: [], icon: 'glyphicon glyphicon-home'},
     { path: 'trending', title: 'Trending', subLi: [], icon: 'glyphicon glyphicon-tint'},
-    { path: 'history', title: 'History', subLi: [], icon:'glyphicon glyphicon-repeat'}
+    { path: 'history', title: 'History', subLi: [], icon:'glyphicon glyphicon-repeat'},
+    { path: 'subscription', title: 'Subscriptions',  icon:'glyphicon glyphicon-hdd' },
   ];
 
   title : string;
@@ -25,7 +30,6 @@ export class SidebarComponent implements OnInit {
   constructor(private titleService : youTubeApiService){
       this.titleService.getLatestNews().subscribe(data =>{
           this.newTitle = data;
-          console.log(this.newTitle);
           this.newTitle.items.map(element =>{
             this.title = element.snippet.title;
           })

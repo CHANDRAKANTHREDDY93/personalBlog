@@ -74,4 +74,16 @@ export class youTubeApiService{
     getSubscribeVideos(videoId){
         return this.http.get("https://www.googleapis.com/youtube/v3/videos?part="+this.part+"%2CcontentDetails%2Cstatistics&id="+videoId+"&key="+this.key);
     }
+    getCNNNews(){
+        return this.http.get("https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=58970b590c7c4c92b151c77f0c7a45c7");
+    }
+    getTOINews(){
+        return this.http.get("https://newsapi.org/v2/top-headlines?sources=the-times-of-india&apiKey=58970b590c7c4c92b151c77f0c7a45c7");
+    }
+    getEspnCric(){
+        return this.http.get("https://newsapi.org/v2/top-headlines?sources=espn-cric-info&apiKey=58970b590c7c4c92b151c77f0c7a45c7");
+    }
+    getNYTimes(){
+        return this.http.get("https://newsapi.org/v2/top-headlines?sources=the-new-york-times&apiKey=58970b590c7c4c92b151c77f0c7a45c7");
+    }
 }

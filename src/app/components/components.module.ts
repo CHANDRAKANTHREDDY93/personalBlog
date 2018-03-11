@@ -9,6 +9,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HomeComponent } from '../home/home.component';
 import { HistoryComponent } from '../history/history.component';
 import { MusicComponent } from '../music/music.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import { MusicComponent } from '../music/music.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchComponent
   ],
   exports: [
     FooterComponent,

@@ -28,16 +28,11 @@ export class HomeComponent implements OnInit {
         this.getData.items.map(element=>{
           const url ='https://www.youtube.com/embed/';
           this.getVideoId.push(element.contentDetails.bulletin.resourceId.videoId);
-          this.getLatestMusicData.push(url+element.contentDetails.bulletin.resourceId.videoId);
+          this.getLatestMusicData.push({video : url+element.contentDetails.bulletin.resourceId.videoId, title: element.snippet.title});
         })
       })
-      /*  this.latestDataApi.getName().subscribe(data=>{
-          this.title =data;
-          console.log("title" +data);
-      });*/
       this.newsApi.getSubscriptionList().subscribe( info =>{
           this.subscribeList = info;
-          console.log(this.subscribeList);
           this.subscribeList.items.map( e =>{
             this.subscribeChannelData.push(e.snippet);
             this.subscribeChannelData.map( i =>{
@@ -46,15 +41,11 @@ export class HomeComponent implements OnInit {
               {
              this.newsApi.getChannelData(a).subscribe( q=>{
             this.channelPlayList = q;
-      })
+            })
     })
     });
     });
     });
-/*      this.latestDataApi.getChannelData().subscribe(channels =>{
-        this.channelList = channels;
-        console.log(this.channelList);
-      })*/
     }
     getEmbedURL(item){
       this.curUrl = this.sanitizer.bypassSecurityTrustResourceUrl(item);

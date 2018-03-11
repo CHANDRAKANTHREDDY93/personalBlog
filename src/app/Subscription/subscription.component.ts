@@ -30,21 +30,19 @@ export class SubscriptionComponent{
       this.subscribeChannelId.push(ele.snippet.resourceId.channelId);
       this.subscriptionService.getPlayList(ele.snippet.resourceId.channelId).subscribe(data =>{
           this.playListItems = data;
+          console.log(this.playListItems);
           this.playListItems.items.map(item =>{
             this.playListId.push(item.id);
       this.subscriptionService.getSubscriptionVideoList(item.id).subscribe(list =>{
           this.getVideoList= list;
         this.getVideoList.items.map( q=>{
           const url ='https://www.youtube.com/embed/';
-          this.getVideos.push(url+q.snippet.resourceId.videoId);
+          this.getVideos.push({video: url+q.snippet.resourceId.videoId, title: q.snippet.title});
           })
           })
       })
           })
       })
-/*      this.subscribechannelLogo =ele.snippet.thumbnails;*/
-    
-     
  });
 }
  getEmbedURL(item){

@@ -24,6 +24,9 @@ import { TrendingComponent } from './trending/trending.component';
 import { HomeComponent } from './home/home.component';
 import { HistoryComponent } from './history/history.component';
 import { MusicComponent } from './music/music.component';
+import { TimeOfIndiaComponent } from './time-of-india/time-of-india.component';
+import { EspnComponent } from './espn/espn.component';
+import { NewyorkTimesComponent } from './newyork-times/newyork-times.component';
 
 @NgModule({
   imports: [
@@ -49,7 +52,10 @@ import { MusicComponent } from './music/music.component';
     TrendingComponent,
     HomeComponent,
     HistoryComponent,
-    MusicComponent
+    MusicComponent,
+    TimeOfIndiaComponent,
+    EspnComponent,
+    NewyorkTimesComponent
   ],
   providers: [youTubeApiService, CookieService],
   bootstrap: [AppComponent]
