@@ -6,6 +6,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import{ NgxPaginationModule } from 'ngx-pagination';
 
 import { HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -34,6 +35,7 @@ import { NewyorkTimesComponent } from './newyork-times/newyork-times.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
