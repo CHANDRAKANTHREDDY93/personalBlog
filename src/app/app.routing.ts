@@ -33,7 +33,7 @@ const routes: Routes =[
     { path: 'history-list',   component: HistoryListComponent },
     { path: 'subscription',   component: SubscriptionComponent },
     { path: 'liked',          component: LikedComponent },
-    { path: 'maps',           component: MapsComponent },
+    { path: 'map',           component: MapsComponent },
     { path: 'cnn',     component: WatchLaterComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },

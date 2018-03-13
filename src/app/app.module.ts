@@ -1,9 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import * as _ from 'underscore';
+import { Http } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import{ NgxPaginationModule } from 'ngx-pagination';
+import { AgmCoreModule } from '@agm/core';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+export function TranslateStaticLoadFactory(http: Http){
+  return new TranslateStaticLoader(http,'./assets/i18n','.json');
+}
 
 import { HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
@@ -39,7 +45,15 @@ import { NewyorkTimesComponent } from './newyork-times/newyork-times.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB6fDFr23ETu0r1ER4Vddy9Nx5rFK-xUW8'
+    }),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: TranslateStaticLoadFactory,
+      deps: [Http]
+    })
   ],
   declarations: [
     AppComponent,

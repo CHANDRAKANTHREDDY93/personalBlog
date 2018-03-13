@@ -1,9 +1,12 @@
-a{
+h3{
     text-decoration: none;
     font-size:16px;
+    transition-timing-function: ease-in;
 }
-a:hover { 
+h3:hover { 
     background-color:#e3e3e3;
+    display: block;
+    
 }
 li{
     list-style-type: none;

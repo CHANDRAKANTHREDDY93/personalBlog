@@ -87,4 +87,7 @@ export class youTubeApiService{
     getNYTimes(){
         return this.http.get("https://newsapi.org/v2/top-headlines?sources=the-new-york-times&apiKey=58970b590c7c4c92b151c77f0c7a45c7");
     }
+    getMaps(){
+        return this.http.get("https://maps.googleapis.com/maps/api/streetview?size=600x300&location=46.414382,10.013988&heading=151.78&pitch=-0.76&key=AIzaSyB6fDFr23ETu0r1ER4Vddy9Nx5rFK-xUW8");
+    }
 }
